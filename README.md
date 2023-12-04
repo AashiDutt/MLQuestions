@@ -410,6 +410,17 @@ LSTMs (Long Short Term Memory) models consist of RNN cells designed to store and
 ### 66) What are RCNNs? [[src]](https://towardsdatascience.com/learn-rcnns-with-this-toy-dataset-be19dce380ec)
 Recurrent Convolutional model is a model that is specially designed to make predictions using a sequence of images (more commonly also know as video). These models are used in object detection tasks in computer vision. The RCNN approach combines both region proposal techniques and convolutional neural networks (CNNs) to identify and locate objects within an image.
 
+### 67) Why accuracy can't be used in backpropagation other than loss function? 
+1. **Sensitivity to outliers:** Accuracy is highly sensitive to outliers in the data. A single misclassification can significantly impact the overall accuracy, making it unreliable for training and optimizing the model.
+
+2. **Binary nature:** Accuracy treats all misclassifications equally, regardless of the severity of the error. For instance, misclassifying a cat as a dog is considered the same as misclassifying a cat as a bird, even though the latter error is more significant.
+
+3. **Inability to handle multi-class tasks:** In multi-class problems, where there are more than two possible categories, accuracy becomes even less informative. It doesn't capture the nuances of the model's performance across different classes and doesn't provide guidance for improving misclassifications between specific classes.
+
+4. **Insensitivity to confidence levels:** Accuracy doesn't take into account the confidence of the model's predictions. A model that produces highly confident but incorrect predictions still receives the same "0" for accuracy as a model that makes less confident but correct predictions.
+
+5. **Not differentiable:** Accuracy is not a differentiable function, meaning it cannot be used directly in backpropagation to update the model's weights. Backpropagation requires a differentiable loss function to determine the direction and magnitude of weight updates.
+   
 ## Contributions
 Contributions are most welcomed.
  1. Fork the repository.
